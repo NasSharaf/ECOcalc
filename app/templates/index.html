@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<html>
+    <head>
+        {% if title %}
+        <title> {{title}} - FIM Calculator </title>
+        {% else %}
+        <title> Welcome to my FIM Calculator! </title>
+        {% endif %}
+    </head>
+    <h1> FIM Calculator </h1>
+    {% for item in allFIMS %}
+    <h2> {{item.type}}</h2>
+    <ul>
+        {% for fims in item.FIMS %}
+        <li> {{ fims }}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</html>
+
+{% endblock %}

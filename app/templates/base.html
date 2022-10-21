@@ -1,0 +1,14 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - FIMCalc</title>
+      {% else %}
+      <title>Welcome to my FIM Calculator</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>FIMCalc: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
