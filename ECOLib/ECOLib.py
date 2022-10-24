@@ -391,24 +391,52 @@ class DryBulbEconomizer(ECO):
 
 class EnergyEfficientMotorReplacement(ECO):
     """
+    Replace an existing motor with a more energy efficient motor
     """
-    def __init__(self, binhours, OATemp):
-        super().__init__(binhours, OATemp)
+    def __init__(self,
+        motorSize: int, 
+        motorEfficiency: float, 
+        motorVoltage: int, 
+        loadRPM: float, 
+        hoursOfUse: int,
+        motorKW: float,
+        newMotorSize: int, 
+        newmotorEfficiency: float, 
+        newmotorVoltage: int, 
+        newloadRPM: float, 
+        newhoursOfUse: int,
+        newmotorKW: float
+    ):
+        self.motorSize = motorSize
+        self.motorEfficiency = motorEfficiency
+        self.motorVoltage = motorVoltage
+        self.loadRPM = loadRPM
+        self.hoursOfUse = hoursOfUse
+        self.motorKW = motorKW
+        self.newMotorSize = newMotorSize
+        self.newmotorEfficiency = newmotorEfficiency
+        self.newmotorVoltage = newmotorVoltage
+        self.newloadRPM = newloadRPM
+        self.newhoursOfUse = newhoursOfUse
+        self.newmotorKW = newmotorKW
 
-    def energyEfficientMotorReplacement(
-        self, motorSize, motorEfficiency, motorVoltage, loadRPM, hoursOfUse, motorKW,
-        newMotorSize, newMotorEfficiency, newMotorVoltage, newLoadRPM, newHoursOfUse, newMotorKW,
-        ):
+    def setAssumptions(self,
+        existingMotorLoadFactor:float = .75,
+        newMotorLoadFactor: float = .75,
+        powerFactor:float = .85,
+        demandUseFactor:float = .80,
+        peakLoadMonths:int = 6
+    ):
+        self.existingMotorLoadFactor = existingMotorLoadFactor
+        self.newMotorLoadFactor = newMotorLoadFactor
+        self.powerFactor = powerFactor
+        self.demandUseFactor = demandUseFactor
+        self.peakLoadMonths = peakLoadMonths
+
+    def energyEfficientMotorReplacement(self):
         """
-        Replace an existing motor with a more energy efficient motor
+        
         """
-        # Assumptions
-        existingMotorLoadFactor = .75
-        newMotorLoadFactor = .75
-        powerFactor = .85
-        demandUseFactor = .80
-        peakLoadMonths = 6
-        # Formula
         motorKW = motorSize * .746 * existingMotorLoadFactor
         newMotorKW = newMotorSize * .746 * existingMotorLoadFactor
         speedRatioCorrFactor = (newLoadRPM/loadRPM)**3

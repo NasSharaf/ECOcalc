@@ -15,7 +15,7 @@
     <h2> {{item.type}}</h2>
     <ul>
         {% for fims in item.FIMS %}
-        <li> {{ fims }}</li>
+        <li> <a href="/{{fims.link}}">{{ fims.title }}</a></li>
         {% endfor %}
     </ul>
     {% endfor %}
