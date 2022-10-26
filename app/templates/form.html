@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1> {{ title }}</h1>
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {% for attr in attrs %}
+            <fieldset>
+                <label for="{{ attr }}">{{attr}}</label>
+                <input type="text" name="{{attr}}" placeholder="{{attr}}">
+            </fieldset>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+{% endblock %}

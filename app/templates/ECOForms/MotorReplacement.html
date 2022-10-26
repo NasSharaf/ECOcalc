@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1> Energy Efficient Motor Replacement </h1>
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.motorSize.label }}<br>
+            {{ form.motorSize }}<br>
+            {% for error in form.motorSize.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.motorEfficiency.label }}<br>
+            {{ form.motorEfficiency }}<br>
+            {% for error in form.motorEfficiency.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.motorVoltage.label }}<br>
+            {{ form.motorVoltage}}<br>
+            {% for error in form.motorVoltage.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+{% endblock %}

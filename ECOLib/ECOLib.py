@@ -753,3 +753,4 @@ if __name__ == "__main__":
     fanSavings = DestratifyingFanSavings(2000, 80, 70, 75, 16, 200, 5000)
     fanSavings.setAssumptions()
     fanSavings.calcFanSavings(70) 
+    print(fanSavings.__dict__.keys())
