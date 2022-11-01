@@ -1,14 +1,20 @@
 <html>
     <head>
+    <link rel="stylesheet" href="static/styles.css">
       {% if title %}
-      <title>{{ title }} - FIMCalc</title>
+      <title>{{ title }} - ECOCalc</title>
       {% else %}
-      <title>Welcome to my FIM Calculator</title>
+      <title>Welcome to my ECO Calculator</title>
       {% endif %}
     </head>
-    <body>
-        <div>FIMCalc: <a href="/index">Home</a></div>
-        <hr>
+    <body class="center">
+        <div>
+            <a href="/index">Home</a>
+            <a href="/index">ECO Calculator</a>
+            <a href="/index">Binmaker</a>
+            <a href="/index">Psychometric Chart</a>
+            <a href="/index">Utility Data Analysis</a>
+        </div>
         <hr>
         {% with messages = get_flashed_messages() %}
         {% if messages %}

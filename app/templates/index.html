@@ -2,13 +2,10 @@
 
 {% block content %}
 
-    <h1> FIM Calculator </h1>
+    <h3> ECO Calculator </h3>
     {% for item in allFIMS %}
-    <h2> {{item.type}}</h2>
     <ul>
-        {% for fims in item.FIMS %}
-        <li> <a href="/{{fims.link}}">{{ fims.title }}</a></li>
-        {% endfor %}
+        <li> <a href="/{{item.link}}">{{ item.title }}</a></li>
     </ul>
     {% endfor %}
 

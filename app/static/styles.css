@@ -1,0 +1,131 @@
+html {
+	--tiny: 10px;
+	--regular: 14px;
+	--white: #fff;
+	--whitesmoke: #f0f0f0;
+	--gainsboro: #e0e0e0;
+	--silver: #c0c0c0;
+	--gray: #808080;
+	--black: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		--white: #000000;
+		--whitesmoke: #202020;
+		--gainsboro: #303030;
+		--silver: #404040;
+		--black: #fff;
+	}
+}
+
+body {
+	background-color: var(--white);
+	cursor: default;
+	color: var(--black);
+	font-family: "Route 159", sans-serif;
+	font-size: var(--regular);
+	line-height: 20px;
+}
+
+a {
+	color: var(--black);
+	cursor: pointer;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+a:hover { color: var(--gray); }
+
+ul {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+sup {
+	color: var(--gray);
+	font-size: var(--tiny);
+	line-height: 0;
+	margin-left: 2px;
+}
+
+svg { stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
+svg path { fill: none; stroke: var(--black); }
+
+.center { 
+	margin: 0 auto; 
+	max-width: 500px; 
+}
+
+fieldset {
+	border: 0;
+	padding: 1 1 1 1;
+}
+
+fieldset:hover {
+	background-color: var(--whitesmoke);
+}
+
+input {
+	border: 0;
+	background-color: var(--white);
+	color: var(--black);
+	max-width: 100%;
+	width: 100%;
+	padding: .5rem .5rem .5rem .5rem;
+}
+
+input:hover { 
+	color: var(--black); 
+	background-color: var(--whitesmoke);
+}
+
+.alt, .trans { overflow: hidden; }
+.alt { background-color: var(--whitesmoke); }
+.trans { background-color: var(--white); }
+.trans:first-child { padding-top: 10px; }
+
+.links { margin-bottom: 10px; overflow: hidden; }
+/* .links p { float: left; width: 50%; } */
+
+.product {
+	margin-bottom: 10px;
+	overflow: hidden;
+	padding-left: 50px;
+}
+
+.product svg {
+	background-color: var(--white);
+	border: var(--whitesmoke) 2px solid;
+	border-radius: 9px;
+	float: left;
+	margin-left: -50px;
+	padding: 8px;
+}
+
+.trans .product svg {
+	background-color: var(--whitesmoke);
+	border: var(--white) 2px solid;
+}
+
+.meta {
+	color: var(--gray);
+	font-size: var(--tiny);
+	font-weight: bold;
+	line-height: 30px;
+	text-transform: uppercase;
+}
+
+@font-face {
+	font-family: "Route 159";
+	font-style: normal;
+	font-weight: normal;
+	src: url(/route159/regular.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: "Route 159";
+	font-style: normal;
+	font-weight: bold;
+	src: url(/route159/bold.woff2) format("woff2");
+}

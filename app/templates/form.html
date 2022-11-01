@@ -2,18 +2,32 @@
 
 {% block content %}
 
-    <h1> {{ title }}</h1>
+    <h3> {{ title }}</h3>
 
     <form action="" method="post">
         {{ form.hidden_tag() }}
+        <h3> Attributes </h3>
         <p>
             {% for attr in attrs %}
             <fieldset>
-                <label for="{{ attr }}">{{attr}}</label>
+                <!-- <label for="{{ attr }}">{{attr}}</label> -->
                 <input type="text" name="{{attr}}" placeholder="{{attr}}">
             </fieldset>
             {% endfor %}
         </p>
+        {% if assumptions is defined and assumptions|length > 0 %}
+        <h3> Assumptions </h3>
+        <p>
+            {% for assumption in assumptions %}
+            <fieldset>
+                <!-- <label for="{{ assumption }}">{{assumption}}</label> -->
+                <input type="text" name="{{assumption}}" placeholder="{{assumption}}">
+            </fieldset>
+            {% endfor %}
+        </p>
+        {% else %}
+
+        {% endif %}
         <p>{{ form.submit() }}</p>
     </form>
 
